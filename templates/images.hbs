@@ -1,9 +1,20 @@
 <section class="imagescontent">
-  <div class="imagesbox"></div>
-  <button class="createdropdown">Upload Image</button>
-  <form class="createimage">
-    <input type="file" class="uploadfile">
-    <textarea class="imagemessage" cols="70" rows="5"></textarea>
-    <input type="submit" value="Send">
-  </form>
+  <div class="imagesbox">
+  {{#each this}}
+    <li class="fetchedimage">
+      <img src="{{url}}" class="imageurl">
+      <span class="imagetext">{{content}}</span>
+      <span class="imagedate">{{created_at}}</span>
+      <span class="imageusername">{{username}}</span>
+    </li>
+  {{/each}}
+  </div>
 </section>
+<footer class="createfooter">
+  <button class="showcreatebox">Upload an Image</button>
+  <form class="createimage">
+    <div class="urlbox"><span class="uploadtext">Upload your URL</span><input type="url" class="uploadfile" placehodler="Gimme A URL"></div>
+    <div class="messagebox"><span class="uploadmessage">Give your Image a Message!</span><textarea class="imagemessage" cols="70" rows="5"></textarea></div>
+    <input type="submit" value="Send" class="sendbutton">
+  </form>
+</footer>

@@ -18,6 +18,8 @@ var Router = Backbone.Router.extend({
     this.listenTo(this.users, 'add', function() {
       this.navigate('images', {trigger: true});
     }.bind(this));
+
+    this.images = new ImageCollection();
   },
 
   index: function() {
@@ -26,8 +28,12 @@ var Router = Backbone.Router.extend({
   },
 
   images: function() {
-    var view = new ImagesView({});
+    var view = new ImagesView({
+      collection: this.images,
+      user: this.users.at(0)
+    });
     $('#app').html(view.el);
+    this.images.fetch();
   }
 
 });

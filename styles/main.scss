@@ -17,5 +17,145 @@ $base-background-color: $very-light-gray;
 body {
   font-family: $base-font-family;
   background-color: $base-background-color;
-  color: $base-font-color;
+  color: black;
+}
+
+.imagescontent {
+  @include outer-container(100vw);
+  height: 100vw;
+  background-color: rgba(40, 44, 52, 1);
+}
+
+.imagesbox {
+  @include span-columns(10);
+  @include shift(1);
+  height: 100vw;
+  margin-top: 20px;
+  background-color: rgba(255, 255, 255, 1);
+  border-radius: 5px;
+  padding: 10px;
+  overflow-y: scroll;
+}
+
+.fetchedimage {
+  @include span-columns(6);
+  @include shift(3);
+  padding: 10px;
+}
+
+.imageurl {
+  @include span-columns(6);
+  @include shift(3);
+  height: auto;
+}
+
+.imagetext {
+  @include span-columns(7);
+  @include shift(3);
+  display: block;
+  margin-top: 7px;
+  margin-bottom: 10px;
+}
+
+.imagedate {
+  @include span-columns(7);
+  @include shift(3);
+  display: block;
+  margin-bottom: 10px;
+}
+
+.imageusername {
+  @include span-columns(7);
+  @include shift(3);
+  display: block;
+}
+
+.createfooter {
+  @include span-columns(12);
+  bottom: 0;
+  z-index: 1;
+  height: auto;
+  position: fixed;
+  background-color: rgba(40, 44, 52, 1);
+  box-shadow: 0 -5px 5px rgba(0, 0, 0, .5);
+  padding: 10px;
+}
+
+.createimage {
+  @include span-columns(12);
+  margin-top: 10px;
+  display: none;
+}
+
+.uploadtext {
+  margin-left: 10px;
+  color: silver;
+}
+
+.uploadfile {
+  @include span-columns(5);
+  height: 30px;
+  margin-right: 15px;
+  margin-bottom: 10px;
+  color: rgba(40, 44, 52, 1);
+  outline: none;
+  border: 0;
+  border-radius: 3px;
+  padding-left: 7px;
+}
+
+.urlbox {
+  @include span-columns(6);
+  @include shift(4);
+  color: white;
+}
+
+.messagebox {
+  @include span-columns(8);
+  @include shift(1.2);
+}
+
+.imagemessage {
+  @include span-columns(8);
+  color: rgba(40, 44, 52, 1);
+  outline: none;
+  border: 0;
+  border-radius: 3px;
+  padding-top: 7px;
+  padding-left: 7px;
+}
+
+.uploadmessage {
+  color: silver;
+  margin-left: 10px;
+}
+
+.sendbutton {
+  position: absolute;
+  top: 30%;
+  border: 1px solid white;
+  background-color: rgba(40, 44, 52, 1);
+  color: white;
+  height: 60px;
+  width: 80px;
+}
+
+.sendbutton:hover {
+  background-color: rgba(255, 255, 255, 1);
+  color: rgba(40, 44, 52, 1);
+}
+
+.sendbutton:active {
+  height: 50px;
+  width: 70px;
+}
+
+.showcreatebox {
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 1);
+  background-color: rgba(40, 44, 52, 1);
+  color: white;
+  height: 30px;
+  top: 50%;
+  left: 50%;
 }
