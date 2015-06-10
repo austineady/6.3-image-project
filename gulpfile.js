@@ -27,7 +27,8 @@
   gulp.task('scripts', function () {
     return gulp.src('scripts/**/*.js')
       .pipe($.sourcemaps.init())
-      .pipe($.babel().on('error', $.util.log))
+      .pipe($.plumber())
+      .pipe($.babel())
       .pipe($.wrapCommonjs({
         relativePath: 'scripts',
         pathModifier: function (path) {
@@ -42,7 +43,8 @@
 
   gulp.task('templates', function(){
     gulp.src('templates/**/*.hbs')
-      .pipe($.handlebars().on('error', $.util.log))
+      .pipe($.plumber())
+      .pipe($.handlebars())
       .pipe($.wrap('Handlebars.template(<%= contents %>)'))
       .pipe($.declare({
         namespace: 'JST',
